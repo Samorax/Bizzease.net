@@ -1,0 +1,8 @@
+﻿@model IEnumerable<WebApplication_Webease_.Models.Blog>
+
+<ul class="feeds">
+        @foreach (var blog in Model)
+        {
+            <li>@Html.ActionLink(blog.BlogTitle,"viewblog",new {id=blog.BlogId })</li>
+        }
+</ul>

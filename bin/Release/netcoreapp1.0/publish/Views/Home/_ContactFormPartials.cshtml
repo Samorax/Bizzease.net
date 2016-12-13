@@ -1,0 +1,10 @@
+﻿@model WebApplication_Webease_.Models.ViewModels.ContactForm
+@if (ViewData["MessageSuccess"] != null)
+{
+    <div>ViewData["MessageSuccess"]</div>
+}else if (ViewData["MessageFailure"]!= null)
+	{
+		<div>ViewData["MessageFailure"]</div>
+	}else{
+        <div>ViewData[@Model]</div>
+	}

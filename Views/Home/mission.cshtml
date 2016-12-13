@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewData["Title"] = "What We DO";
+    ViewData["Description"] = "Are you intending to start a business or you are in business already and struggling with costs ? We can help you minimise costs of your startup and business operations, without affecting the effecinecy of your business.";
+}
+<div  class="body-content indexBackground">
+    <div class="otherBackground">
+    <div class="container">
+    <div class="row section-container">
+        <div class="col-sm-3">
+            <h5 class="link_headers">Quick links</h5>
+            <hr>
+            <ul class="mission-nav-links">
+                <li class="mission-nav" id="startNew">Starting a new Business</li>
+                <li class="mission-nav" id="alreadyBiz">Already in Business</li>
+                <li class="mission-nav" id="yDiff">Why we are different from others</li>
+                <li class="mission-nav" id="oFe">Our Fees</li>
+            </ul>
+        </div>
+    <div class="col-sm-6 article-parent">
+        <section id="fillMeUp" >
+            <section class="default">
+                <article>
+                    <section>
+                        <h4 class="article-header" id="firstP">I am about starting a business</h4>
+                        <hr>
+                        <p>From the conception of your idea, to its market awareness through SEO, Social Media and Website or Web Application Implementation,
+                        to the efficient management of your business cost savings through the erection of IT infrastructures that caters for your business needs.</p>
+
+                        <p>We are aware of how tedious it is to start a business from scratch,
+                        how difficult it is to make your dream a reality, but wait a minute, building a business doesn't have to be hard.
+                        We are here to aid your product life-cycle, you just focus on the implementation of your idea into a concrete evidence ,
+                        while we aid you in the market awareness of the product and after your successful launch of your product, also aid you by providing and implementing cost savings
+                        measures gained from business consultation. This we hope will save you huge costs at the start of your business. Read @Html.ActionLink("Case Studies", "caseStudies") for better Understanding.</p>
+                    </section>
+                    <section>
+                        <h4 class="article-header" id="secP">I already have a business</h4>
+                        <hr>
+                        <p>Are you finding it expensive in managing your business properly ?
+                        Is the market odd at the moment and you are considering a restructuring so as to save cost ?
+                        Are you at the start of your entrepreneurship journey and find the role very tedious ?</p>
+                        <p>
+                        We should be able to help you. Read @Html.ActionLink("Case Studies", "caseStudies") for more understanding.
+                        </p>
+                    </section>
+                    <section>
+                        <h4 class="article-header" id="thirdP">Why we are different from others</h4>
+                        <hr>
+                        <p>
+                            Are you finding it expensive in managing your business properly ?
+                            Is the market odd at the moment and you are considering a restructuring so as to save cost ?
+                            Are you at the start of your entrepreneurship journey and find the role very tedious ?
+                        </p>
+                        <p>
+                            We should be able to help you. Read @Html.ActionLink("Case Studies", "caseStudies") for more understanding.
+                        </p>
+                    </section>
+                    <section class="sections">
+                            <h4 class="article-header" id="fourthP">Our Fees</h4>
+                            <hr>
+                            <p>
+                                Our fees are dependent on the type of services your business needs. The fee may be specific for a paticular service or
+                                come at discounted rate for multiple services. For a good information about the fees of the services we offer. Kindly @Html.ActionLink("Contact Us","contact") or use the
+                                @Html.ActionLink("request quotation form","index"), we endeavour to get back as soon as possible.
+                            </p>
+                    
+                    </section>
+                </article>
+            </section>
+            
+        </section>
+    </div> 
+    <div class="col-sm-3 relatedResources">
+        <h5 class="link_headers">Related Resources</h5>
+        <hr>
+        <ul>
+            <li class="mission-nav">@Html.ActionLink("Case Studies","CaseStudies")</li>
+            @*<li class="mission-nav">@Html.ActionLink("Successful Projects","Projects")</li>
+            <li class="mission-nav">@Html.ActionLink("Strategy that works","ViewBlog")</li>*@
+        </ul>
+        <h5 class="link_headers">Services</h5>
+        <hr>
+        <ul>
+            <li class="mission-nav">@Html.ActionLink("Business Consultancy","Business_Consultancy")</li>
+            <li class="mission-nav">@Html.ActionLink("Bookkeeping and Accounting","Accounting")</li>
+            <li class="mission-nav">@Html.ActionLink("Web and Mobile Applications","web_mobile_application")</li>
+
+        </ul>
+        </div> 
+    </div>
+    </div>
+</div>
+    </div>
+
+@section scripts{
+<script src="~/js/site.js"></script>
+}
+

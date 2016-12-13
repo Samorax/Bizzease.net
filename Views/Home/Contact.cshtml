@@ -1,0 +1,97 @@
+@model WebApplication_Webease_.Models.ViewModels.ContactForm
+@{
+    ViewData["Title"] = "Contact us | Contact Webease for your business applications, Ecommerce Websites, enterprise applications and mobile applications.";
+    ViewData["Description"] = "Contact Webease using the web form on this page and be sure we will respond to your queries as soon as we can.";
+}
+
+<div class="body-content indexBackground">
+    <div class="otherBackground">
+        <div class="container">
+    <div class="row section-container" itemscope itemtype="http://schema.org/WebPage">
+        <div class="col-sm-8 col-sm-offset-2" itemprop="contactType">
+
+            @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+            {
+                <div class="row">
+                    <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+                    <div class="col-sm-8">
+                        <section class="row home-form-sections">
+                            <div class="row">
+                                <div class="col-sm-9"><input asp-for="FirstName" placeholder="First Name" autofocus class="form-control" /></div>
+                                <div class="col-sm-3 text-Validation text-danger">
+                                    <span asp-validation-for="FirstName"></span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="row home-form-sections">
+
+                            <div class="row">
+                                <div class="col-sm-9"><input asp-for="LastName" placeholder="Last Name" class="form-control" /></div>
+                                <div class="col-sm-3 text-danger text-Validation">
+                                    <span asp-validation-for="LastName"></span>
+                                </div>
+                            </div>
+
+
+
+                        </section>
+
+                        <section class="row home-form-sections">
+                            <div class="row">
+                                <div class="col-sm-9"><input asp-for="Email" placeholder="Email Address" class="form-control" /></div>
+                                <div class="col-sm-3 text-danger text-Validation">
+                                    <span asp-validation-for="Email"></span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="row home-form-sections">
+                            <div class="row">
+                                <div class="col-sm-9"><input asp-for="Tel" placeholder="Telephone Number" class="form-control" /></div>
+                            </div>
+                        </section>
+
+                        <section class="row home-form-sections">
+
+                            <div class="row">
+                                <div class="col-sm-9"><textarea asp-for="Message" placeholder="Write your message...." rows="10" cols="80" class="form-control"></textarea></div>
+                                <div class="col-sm-3 text-danger text-Validation">
+                                    <span asp-validation-for="Message"></span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="row">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <input type="submit" value="send" id="submit" class="btn btn-sm btn-primary"/>
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>
+                            Alternatively Contact us via social media, We usually respond within the hour.
+                        </p>
+                        <div>
+                            <a href="https://www.facebook.com/webeazzy"><i class="fa fa-facebook-official fa-3x"></i></a>
+                            <a href="https://twitter.com/webeazzy"><i class="fa fa-twitter-square fa-3x"></i></a>
+                            <a href="https://plus.google.com/103024593214215414951"><i class="fa fa-google-plus-square fa-3x"></i></a>
+                            <a href="https://www.instagram.com/webeaseinc/"><i class="fa fa-instagram fa-3x"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

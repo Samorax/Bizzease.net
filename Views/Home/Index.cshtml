@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "Home | Build your business with ease";
+    ViewData["Description"] = "We specialise in the architectural development of business applications to solve your business needs. From building your Ecommerce websites to promote your business to provision of enterprise application and mobile application to aid your business operational needs.";
+}
+<div class="body-content indexBackground">
+    <div class="container">
+        <div class="row section-container" itemscope itemtype="http://schema.org/WebPage">
+            <div class="col-sm-9">
+                <div>
+                    <h1 class="moto" itemprop="headline">Build with ease.</h1>
+                </div>
+                <div class="row">
+                    <div class="image-mission cols col-md-4">
+                        <h6 itemprop="alternativeHeadline">Bookkeeping and Accounting</h6>
+                        <div class="img-container image-mission-pics">
+                            <img itemprop="photo" src="@Url.Content("images/bookkeeing.jpg")" alt="accounting_Bookkeeping" class="img-responsive indexImages" />
+                            <a href="/services/accounting" class="mission-caption">The recent trends in finance industry, shows that SMEs are replacing some finance functions of their businesses with Bookkeepers, some even on job adverts prescribe the duties
+                            .. Continue<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="image-mission col-md-4">
+                        <h6 itemprop="alternativeHeadline">Mobile and Ecommerce Applications</h6>
+                        <div class="img-container image-mission-pics">
+                            <img itemprop="photo" src="@Url.Content("images/web_mobile_application.jpg")" alt="Mobile_Web_Applications" class="img-responsive indexImages" />
+                            <a href="/services/web_mobile_application" class="mission-caption">Building a webiste, web application or mobile application can take your business to places you never expected. A website serves as the image of your business, regardless of the size .. Continue<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="image-mission col-md-4">
+                        <h6 itemprop="alternativeHeadline">Business Consultancy</h6>
+                        <div class="img-container image-mission-pics">
+                            <img itemprop="photo" src="@Url.Content("images/office-1209640_640.jpg")" alt="Business_consultancy" class="img-responsive indexImages" />
+                            <a href="/services/business_consultancy" class="mission-caption">Implementing Business Consultancy is not a common task in SMEs, but its potential benefits to business operations are huge. Our experience of its implementation in SMEs have helped..
+             Continue<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="row" style="margin-top:40px" itemscope itemtype="http://schema.org/BlogPosting">
+                    <div class="image-mission col-sm-6 col-sm-offset-4">
+                        <h6>Recent Blog</h6>
+                        @{await Html.RenderPartialAsync("_blogFeeds", ViewData["latestblogs"]);}
+                    </div>
+                </div>*@
+            </div>
+
+            <div id="feedbackMessage">
+            @Html.Partial("_homeContactForm")
+                </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+   <script src="~/js/mission-caption.js"></script>
+}
+
+
+
+

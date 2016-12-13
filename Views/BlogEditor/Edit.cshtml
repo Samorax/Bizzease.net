@@ -1,0 +1,80 @@
+@model WebApplication_Webease_.Models.Blog
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="body-content otherBackground">
+    <div class="container">
+    <div class="row section-container">
+    <div class="col-sm-4">
+<h2>Edit</h2>
+        <hr />
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="BlogId" />
+        <div class="form-group">
+            <label asp-for="BlogAuthor" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BlogAuthor" class="form-control" />
+                <span asp-validation-for="BlogAuthor" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogBody" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BlogBody" class="form-control" />
+                <span asp-validation-for="BlogBody" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BlogDate" class="form-control" />
+                <span asp-validation-for="BlogDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogSummary" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BlogSummary" class="form-control" />
+                <span asp-validation-for="BlogSummary" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogTag" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BlogTag" class="form-control" />
+                <span asp-validation-for="BlogTag" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogTitle" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BlogTitle" class="form-control" />
+                <span asp-validation-for="BlogTitle" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+    </div>
+    </div>
+    </div>
+    
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

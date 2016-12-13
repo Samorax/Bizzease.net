@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WebApplication_Webease_.Models.Blog>
+@{
+    ViewData["Title"] = "Blogs";
+    ViewData["Description"] = "Read about what we are doing in the IT sphere. Learn some the how and to do of new technologies";
+}
+<div class="body-content indexBackground">
+    <div class="otherBackground">
+    <div class="container">
+    <div class="row section-container" itemscope itemtype="http://schema.org/WebPage">
+        <ul class="col-sm-offset-3 col-sm-6" itemscope itemtype="http://schema.org/Blog">
+            @foreach (var Blog in Model)
+            {
+                <li>
+                    <div itemprop="articleSection">
+                        <h5 itemprop="alternativeHeadline">@Html.ActionLink(Blog.BlogTitle, "viewblog", new { id = Blog.BlogId }, new { @class = "bloglistsheader" })</h5>
+                        <p itemprop="articleSection">@Blog.BlogSummary</p>
+                        <p class="text-muted" itemprop="author">@Blog.BlogAuthor | @Blog.BlogDate</p>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+        @if (ViewData["listOfPages"] != null)
+        {
+            <ul>
+                @foreach (var num in ViewData["listOfPages"] as List<int>)
+                {
+                    <li>num</li>
+                }
+            </ul>
+        }
+        
+        </div>
+        </div>
+</div>

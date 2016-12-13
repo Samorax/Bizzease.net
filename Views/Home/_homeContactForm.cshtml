@@ -1,0 +1,50 @@
+﻿@model WebApplication_Webease_.Models.ViewModels.HomeContactForm
+<div class="col-sm-3" itemprop="contactType">
+    <div class="home-form">
+        <p>Get a quick quote about your project</p>
+        @if (ViewData["MessageSuccess"] != null)
+        {
+            <div>@ViewData["MessageSuccess"]</div>
+        }
+        @if (ViewData["MessageErorr"] != null)
+        {
+            <div>@ViewData["MessageErorr"]</div>
+        }
+        @using (Html.BeginForm("HomeContactForm", "Home", FormMethod.Post, new { id = "homeContactForm" }))
+        {
+                        <section class="home-form-sections">
+                            <div class="form-group">
+                            
+                            <div>@Html.LabelFor(c => c.Name)</div>
+                            <div>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                                </div>
+                            
+                        </section>
+
+                        <section class="home-form-sections">
+                            <div class="form-group">
+                                <div>@Html.LabelFor(c => c.Email)</div>
+                                <div>
+                                    <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                </div>
+                        </section>
+
+                        <section class="home-form-sections">
+                            <div>@Html.LabelFor(c => c.ProjectDescription)</div>
+                            <div><textarea asp-for="ProjectDescription" class="form-control" spellcheck="true" cols="40" rows="8"></textarea></div>
+                            <div class="text-danger"><span asp-validation-for="ProjectDescription" class="text-danger"></span></div>
+                        </section>
+                        <div class="row">
+                            <div class="col-sm-7"><input type="submit" value="Get a response" id="homeSubmit" class="home-form-submit-button" /></div>
+                        </div>
+        }
+        <img id="sendLoader" src="~/images/spin.gif" />
+    </div>
+</div>
+
+

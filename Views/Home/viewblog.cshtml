@@ -1,0 +1,67 @@
+﻿@model WebApplication_Webease_.Models.Blog
+
+@{
+    ViewData["Title"] = Model.BlogTitle;
+    ViewData["Description"] = Model.BlogSummary;
+}
+<div class="body-content indexBackground">
+    <div class="otherBackground">
+    <div class="container">
+<div class="row section-container" itemscope itemtype="http://schema.org/WebPage">
+    <div class="col-sm-9">
+    <article itemscope itemtype="http://schema.org/Blog">
+        <h2 itemprop="headline">@Model.BlogTitle</h2>
+        <div class="row">
+            <div itemprop="category">@Model.BlogTag</div>
+            <div itemprop="datePublished">@Model.BlogDate</div>
+        </div>
+        <div itemprop="articleBody">@Html.Partial(Model.BlogBody)</div>
+
+    </article>
+    <hr />
+    <section itemscope itemtype="http://schema.org/UserComments">
+        <h5 itemprop="headline">Comments</h5>
+        @if (ViewData["blogComments"] != null)
+        {
+            { await Html.RenderPartialAsync("Comments", ViewData["blogComments"]); }
+        }
+        else
+        {
+            <div itemprop="alternativeHeadline">No Comments yet. Be the first to comment.</div>
+        }
+    </section>
+    <hr />
+   
+    <section itemprop="contactType">
+        @if (ViewData["CommentPostedError"] != null)
+        {
+            <div>ViewData["CommentPostedError"]</div>
+        }
+        @if (ViewData["CommentPostedSuccess"] != null)
+        {
+            <div>ViewData["CommentPostedSuccess"]</div>
+        }
+        <form asp-action="Comments" method="post">
+            @{await Html.RenderPartialAsync("CommentInputSection", new WebApplication_Webease_.Models.Comment()); }
+            <input hidden asp-for="BlogId" />
+            <div class="form-group">
+                <div class="row">
+                <input type="submit" value="Submit" class="btn btn-primary col-sm-3" />
+                <input type="reset" value="Reset" class="btn btn-primary col-sm-3"/>
+                    
+                </div>
+            </div>
+        </form>
+    </section>
+    </div>
+    </div>
+        </div>
+</div>
+    </div>
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+﻿@if (ViewData["CommentPostedSuccess"] != null)
+{
+    <div id="commentpostedsuccess">@ViewData["CommentPostedSuccess"]</div>
+}else{
+    <div id="commentpostederror">@ViewData["CommentPostedError"]</div>
+}

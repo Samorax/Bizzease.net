@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "framework": {
+      "name": "Microsoft.NetCore.App",
+      "version": "1.0.0-rc2-3002702"
+    }
+  }
+}

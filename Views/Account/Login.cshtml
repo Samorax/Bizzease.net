@@ -1,0 +1,70 @@
+﻿@using System.Collections.Generic
+@using Microsoft.AspNet.Http
+@using Microsoft.AspNet.Http.Authentication
+@model LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <section>
+                <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
+                    
+                        <h4>Log into your account</h4>
+                    <hr />
+                    <div asp-validation-summary="ValidationSummary.All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="col-md-4 control-label"></label>
+                        <div class="col-md-6">
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="col-md-4 control-label"></label>
+                        <div class="col-md-6">
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-md-6">
+                            <div class="checkbox">
+                                <input asp-for="RememberMe" />
+                                <label asp-for="RememberMe"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-offset-4 col-md-6">
+                        <ul class="list-inline">
+                            <li>
+                                <a asp-action="Register">Register as a new user?</a>
+                            </li>
+                            <li>
+                                <a asp-action="ForgotPassword">Forgot your password?</a>
+                            </li>
+                        </ul>
+                    </div>    
+                    
+                    
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-md-6">
+                            <button type="submit" class="btn btn-default">Log in</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+</div>
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

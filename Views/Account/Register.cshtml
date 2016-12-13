@@ -1,0 +1,98 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    <div class="row">
+        <div class="col-sm-6">
+        <form asp-controller="Account" asp-action="Register" method="post" class="form-horizontal" role="form">
+            <h4>Create a new account.</h4>
+            <hr />
+            <div class="form-group">
+                <label asp-for="client" class="col-md-offset-2 col-md-4 control-label"></label>
+                <div class="col-md-6">
+                    <select asp-for="client" asp-items="Html.GetEnumSelectList<WebApplication_Webease_.ViewModels.Account.customerType>()" class="form-control"></select>
+                    <span asp-validation-for="client" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OrganizationName" class="col-md-offset-2 col-md-4 control-label"></label>
+                <div class="col-md-6">
+                    <input asp-for="OrganizationName" class="form-control" />
+                    <span asp-validation-for="OrganizationName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PostionAtOrganization" class="col-md-offset-2 col-md-4 control-label"></label>
+                <div class="col-md-6">
+                    <input asp-for="PostionAtOrganization" class="form-control" />
+                    <span asp-validation-for="PostionAtOrganization" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FirstLineOfAddress" class="col-md-offset-2 col-md-4 control-label"></label>
+                <div class="col-md-6">
+                    <input asp-for="FirstLineOfAddress" class="form-control" />
+                    <span asp-validation-for="FirstLineOfAddress" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SecondLineOfAddress" class="col-md-offset-2 col-md-4 control-label"></label>
+                <div class="col-md-6">
+                    <input asp-for="SecondLineOfAddress" class="form-control" />
+                    <span asp-validation-for="SecondLineOfAddress" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PostCode" class="col-md-offset-2 col-md-4 control-label"></label>
+                <div class="col-md-6">
+                    <input asp-for="PostCode" class="form-control" />
+                    <span asp-validation-for="PostCode" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="col-md-offset-2 col-md-4 control-label"></label>
+                <div class="col-md-6">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password" class="col-md-offset-2 col-md-4 control-label"></label>
+                <div class="col-md-6">
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="col-md-offset-2 col-md-4 control-label"></label>
+                <div class="col-md-6">
+                    <input asp-for="ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-6 col-md-6">
+                    <button type="submit" class="btn btn-default">Register</button>
+                </div>
+            </div>
+        </form>
+            </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

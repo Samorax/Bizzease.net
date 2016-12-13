@@ -1,0 +1,12 @@
+﻿@model WebApplication_Webease_.Models.Comment
+
+@if (ViewData["CommentPostedSuccess"] != null)
+{
+    <div> ViewData["CommentPostedSuccess"]</div>
+
+}else if (ViewData["CommentPostedError"] != null)
+{
+    <div class="text-danger">ViewData["CommentPostedError"]</div>
+}else{
+     <div class="text-danger">All the fields are required</div>
+}

@@ -1,0 +1,8 @@
+﻿@model WebApplication_Webease_.Models.Projects
+
+@if (ViewBag.latestProject != null)
+{
+    <div>@ViewBag.latestProject</div>
+}else{
+    <div>@ViewBag.NoFeed</div>
+}

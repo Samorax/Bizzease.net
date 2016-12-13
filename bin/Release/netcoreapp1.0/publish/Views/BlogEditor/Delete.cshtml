@@ -1,0 +1,65 @@
+@model WebApplication_Webease_.Models.Blog
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="body-content otherBackground">
+<div class="container">
+<div class="row section-container">
+<div class="col-sm-4">
+<h2>Delete</h2>
+    <hr />
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BlogAuthor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BlogAuthor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BlogBody)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BlogBody)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BlogDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BlogDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BlogSummary)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BlogSummary)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BlogTag)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BlogTag)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BlogTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BlogTitle)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+

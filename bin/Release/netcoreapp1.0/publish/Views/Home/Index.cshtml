@@ -1,0 +1,73 @@
+@model WebApplication_Webease_.Models.ViewModels.HomeContactForm
+@{
+    ViewData["Title"] = "Home | Webease Build your business applications: Ecommerce Website, Enterprise applications and Mobile applications with ease.";
+    ViewData["Description"] = "We specialise in the architectural development of business applications to solve your business needs. From building your Ecommerce websites to promote your business to provision of enterprise application and mobile application to aid your business operational needs.";
+}
+<div class="body-content indexBackground">
+    <div class="container">
+        <div class="row section-container" itemscope itemtype="http://schema.org/WebPage">
+            <div class="col-sm-9">
+                <div>
+                    <h1 class="moto" itemprop="headline">Build with ease.</h1>
+                </div>
+                <div class="row">
+                    <div class="image-mission cols col-md-4">
+                        <h6 itemprop="alternativeHeadline">Respnsive and Adaptive design</h6>
+                        <div class="img-container">
+                            <img itemprop="photo" src="@Url.Content("images/webease-pic(responsive design).png")" alt="responsive_design" class="img-responsive" />
+                        </div>
+                    </div>
+                    <div class="image-mission col-md-4">
+                        <h6 itemprop="alternativeHeadline">Mobile and Ecommerce Applications</h6>
+                        <div class="img-container">
+                            <img itemprop="photo" src="@Url.Content("images/business_applications.png")" alt="ecommerce_websites" class="img-responsive" />
+                        </div>
+                    </div>
+                    <div class="image-mission col-md-4">
+                        <h6 itemprop="alternativeHeadline">Effective Architecture</h6>
+                        <div class="img-container">
+                            <img itemprop="photo" src="@Url.Content("images/software-657188_1280.png")" alt="architectural_design" class="img-responsive" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:40px" itemscope itemtype="http://schema.org/BlogPosting">
+                    <div class="image-mission col-sm-6 col-sm-offset-4">
+                        <h6>Recent Blog</h6>
+                        @*@{await Html.RenderPartialAsync("_blogFeeds");}*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3" itemprop="contactType">
+                <div class="home-form">
+                    <p>Get a quick quote about your project</p>
+
+                    @using (Html.BeginForm("HomeContactForm", "Home", FormMethod.Post, new { id = "homeContactForm" }))
+                    {
+                        <div id="feedbackMessage"></div>
+                        <section class="home-form-sections">
+                            <div>@Html.LabelFor(c => c.Name)</div>
+                            <div><input asp-for="Name" class="form-control" /></div>
+                            <span asp-validation-for="Name"></span>
+                        </section>
+
+                        <section class="home-form-sections">
+                            <div>@Html.LabelFor(c => c.Email)</div>
+                            <div><input asp-for="Email" class="form-control" /></div>
+                            <span asp-validation-for="Email"></span>
+                        </section>
+
+                        <section class="home-form-sections">
+                            <div>@Html.LabelFor(c => c.ProjectDescription)</div>
+                            <div><textarea asp-for="ProjectDescription" class="form-control" spellcheck="true" cols="40" rows="8"></textarea></div>
+                            <span asp-validation-for="ProjectDescription"></span>
+                        </section>
+                        <div class="row">
+                            <div class="col-sm-7"><input type="submit" value="Get a response" id="homeSubmit" class="home-form-submit-button" /></div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

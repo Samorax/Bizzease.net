@@ -1,0 +1,14 @@
+﻿@model IEnumerable<WebApplication_Webease_.Models.Comment>
+
+@foreach (var comment in Model)
+{
+    <li>
+        <h6>@comment.CommenterName</h6>
+        <p class="text-muted">@comment.CommentDate</p>
+        <Summary>
+            <details open="open">
+                <p>@comment.CommentBody</p>
+            </details>
+        </Summary>
+    </li>
+}
